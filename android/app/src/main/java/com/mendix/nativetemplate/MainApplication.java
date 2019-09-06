@@ -26,6 +26,8 @@ import org.reactnative.camera.RNCameraPackage;
 import java.util.Arrays;
 import java.util.List;
 
+import com.microsoft.codepush.react.CodePush;
+
 import fr.greweb.reactnativeviewshot.RNViewShotPackage;
 import io.invertase.firebase.RNFirebasePackage;
 
@@ -39,6 +41,7 @@ public class MainApplication extends MendixReactApplication {
   public List<ReactPackage> getPackages() {
     return Arrays.<ReactPackage>asList(
             new MainReactPackage(),
+            new CodePush(getCodePushKey(), getApplicationContext(), BuildConfig.DEBUG),
             new RNGestureHandlerPackage(),
             new RNCWebViewPackage(),
             new RNViewShotPackage(),
